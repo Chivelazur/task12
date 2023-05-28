@@ -1,0 +1,3 @@
+C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/CMakeFiles/uniorb_test.dir
+C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/CMakeFiles/ALL_BUILD.dir
+C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/CMakeFiles/ZERO_CHECK.dir

@@ -1,0 +1,1 @@
+#include "../include/satellite_parameters.hpp"

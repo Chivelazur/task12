@@ -1,0 +1,9 @@
+1. CMake:
+cd build
+cmake ..
+
+2. Launch MSBUILD:
+msbuild UNIORB.sln /p:Configuration=Release
+
+3. Launch test
+C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\release\uniorb_test.exe C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\data\Russia2Constellation2 C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\data\Facility2Constellation C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\output
