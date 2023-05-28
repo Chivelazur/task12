@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{88E2F6D3-B720-383C-9BE0-B552BDC6CDD8}</ProjectGuid>
+    <ProjectGuid>{13C0A7FE-7158-3108-8769-ECE6ABC9AE47}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
@@ -59,25 +59,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">uniorb_test.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">uniorb_test</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">uniorb_test.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">uniorb_test</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">uniorb_test.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">uniorb_test</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">uniorb_test.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">uniorb_test</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -106,10 +106,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -119,7 +119,7 @@
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/Debug/uniorb_test.exe C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/release/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/Debug/uniorb_test.exe C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/release/
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -134,8 +134,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/Debug/uniorb_test.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/Debug/uniorb_test.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/Debug/uniorb_test.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/Debug/uniorb_test.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -144,7 +144,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -164,10 +164,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -177,7 +177,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/Release/uniorb_test.exe C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/release/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/Release/uniorb_test.exe C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/release/
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -192,8 +192,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/Release/uniorb_test.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/Release/uniorb_test.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/Release/uniorb_test.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/Release/uniorb_test.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -202,7 +202,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -222,10 +222,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -235,7 +235,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/MinSizeRel/uniorb_test.exe C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/release/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/MinSizeRel/uniorb_test.exe C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/release/
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -250,8 +250,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/MinSizeRel/uniorb_test.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/MinSizeRel/uniorb_test.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/MinSizeRel/uniorb_test.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/MinSizeRel/uniorb_test.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -260,7 +260,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -279,10 +279,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -292,7 +292,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PostBuildEvent>
       <Message></Message>
       <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/RelWithDebInfo/uniorb_test.exe C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/release/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/RelWithDebInfo/uniorb_test.exe C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/release/
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -307,8 +307,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/RelWithDebInfo/uniorb_test.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/RelWithDebInfo/uniorb_test.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/RelWithDebInfo/uniorb_test.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/RelWithDebInfo/uniorb_test.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -316,10 +316,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/CMakeLists.txt</Message>
+    <CustomBuild Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb -BC:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build --check-stamp-file C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/_ALBERT/_works_studies/_mysoft/task12/uniorb -BC:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build --check-stamp-file C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -327,12 +327,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\3.16.6\CMakeCCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\3.16.6\CMakeCXXCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\3.16.6\CMakeRCCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\3.16.6\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\3.16.6\CMakeCCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\3.16.6\CMakeCXXCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\3.16.6\CMakeRCCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\3.16.6\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb -BC:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build --check-stamp-file C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/_ALBERT/_works_studies/_mysoft/task12/uniorb -BC:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build --check-stamp-file C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -340,12 +340,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\3.16.6\CMakeCCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\3.16.6\CMakeCXXCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\3.16.6\CMakeRCCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\3.16.6\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\3.16.6\CMakeCCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\3.16.6\CMakeCXXCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\3.16.6\CMakeRCCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\3.16.6\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb -BC:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build --check-stamp-file C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/_ALBERT/_works_studies/_mysoft/task12/uniorb -BC:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build --check-stamp-file C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -353,12 +353,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\3.16.6\CMakeCCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\3.16.6\CMakeCXXCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\3.16.6\CMakeRCCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\3.16.6\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\3.16.6\CMakeCCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\3.16.6\CMakeCXXCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\3.16.6\CMakeRCCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\3.16.6\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb -BC:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build --check-stamp-file C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/_ALBERT/_works_studies/_mysoft/task12/uniorb -BC:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build --check-stamp-file C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -366,52 +366,52 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\3.16.6\CMakeCCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\3.16.6\CMakeCXXCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\3.16.6\CMakeRCCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\3.16.6\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\3.16.6\CMakeCCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\3.16.6\CMakeCXXCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\3.16.6\CMakeRCCompiler.cmake;C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\3.16.6\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\date.hpp" />
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\event.hpp" />
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\event_type.hpp" />
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\exporter.hpp" />
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\importer.hpp" />
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\metrica.hpp" />
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\propagator.hpp" />
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\propagator_data.hpp" />
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\satellite.hpp" />
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\satellite_parameters.hpp" />
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\session.hpp" />
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\settings.hpp" />
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\station.hpp" />
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\strategy.hpp" />
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\strategy_1.hpp" />
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\strategy_2.hpp" />
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\strategy_3.hpp" />
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\uniorb.hpp" />
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\date.cpp" />
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\event.cpp" />
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\event_type.cpp" />
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\exporter.cpp" />
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\importer.cpp" />
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\metrica.cpp" />
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\propagator.cpp" />
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\propagator_data.cpp" />
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\satellite.cpp" />
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\satellite_parameters.cpp" />
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\session.cpp" />
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\settings.cpp" />
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\station.cpp" />
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\strategy.cpp" />
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\strategy_1.cpp" />
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\strategy_2.cpp" />
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\strategy_3.cpp" />
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\test\main.cpp" />
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\date.hpp" />
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\event.hpp" />
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\event_type.hpp" />
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\exporter.hpp" />
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\importer.hpp" />
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\metrica.hpp" />
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\propagator.hpp" />
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\propagator_data.hpp" />
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\satellite.hpp" />
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\satellite_parameters.hpp" />
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\session.hpp" />
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\settings.hpp" />
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\station.hpp" />
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\strategy.hpp" />
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\strategy_1.hpp" />
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\strategy_2.hpp" />
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\strategy_3.hpp" />
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\uniorb.hpp" />
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\date.cpp" />
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\event.cpp" />
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\event_type.cpp" />
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\exporter.cpp" />
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\importer.cpp" />
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\metrica.cpp" />
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\propagator.cpp" />
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\propagator_data.cpp" />
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\satellite.cpp" />
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\satellite_parameters.cpp" />
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\session.cpp" />
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\settings.cpp" />
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\station.cpp" />
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\strategy.cpp" />
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\strategy_1.cpp" />
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\strategy_2.cpp" />
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\strategy_3.cpp" />
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\test\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\build\ZERO_CHECK.vcxproj">
-      <Project>{EFC9FE81-B82C-3299-862D-4B17F3AE1098}</Project>
+    <ProjectReference Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\build\ZERO_CHECK.vcxproj">
+      <Project>{87F45BC3-FD68-3523-8A8C-7D39B18A9550}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

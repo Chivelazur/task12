@@ -1,126 +1,126 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\date.cpp">
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\date.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\event.cpp">
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\event.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\event_type.cpp">
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\event_type.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\exporter.cpp">
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\exporter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\importer.cpp">
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\importer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\metrica.cpp">
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\metrica.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\propagator.cpp">
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\propagator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\propagator_data.cpp">
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\propagator_data.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\satellite.cpp">
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\satellite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\satellite_parameters.cpp">
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\satellite_parameters.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\session.cpp">
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\session.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\settings.cpp">
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\settings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\station.cpp">
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\station.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\strategy.cpp">
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\strategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\strategy_1.cpp">
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\strategy_1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\strategy_2.cpp">
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\strategy_2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\source\strategy_3.cpp">
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\strategy_3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\test\main.cpp">
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\test\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\date.hpp">
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\date.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\event.hpp">
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\event.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\event_type.hpp">
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\event_type.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\exporter.hpp">
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\exporter.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\importer.hpp">
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\importer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\metrica.hpp">
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\metrica.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\propagator.hpp">
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\propagator.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\propagator_data.hpp">
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\propagator_data.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\satellite.hpp">
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\satellite.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\satellite_parameters.hpp">
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\satellite_parameters.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\session.hpp">
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\session.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\settings.hpp">
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\settings.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\station.hpp">
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\station.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\strategy.hpp">
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\strategy.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\strategy_1.hpp">
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\strategy_1.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\strategy_2.hpp">
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\strategy_2.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\strategy_3.hpp">
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\strategy_3.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\include\uniorb.hpp">
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\uniorb.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\CMakeLists.txt" />
+    <CustomBuild Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{C7879261-B51B-33A1-8B64-4050ACB9A72C}</UniqueIdentifier>
+      <UniqueIdentifier>{98B39FCA-39CE-3E9F-A8FC-2B40B7F19E22}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{CDFAE6E5-E8F0-3B17-8BC6-213C9048D005}</UniqueIdentifier>
+      <UniqueIdentifier>{EC80BBE6-3FF6-3776-9B81-7F436875C591}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

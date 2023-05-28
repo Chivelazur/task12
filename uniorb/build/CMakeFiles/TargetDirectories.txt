@@ -1,3 +1,3 @@
-C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/CMakeFiles/uniorb_test.dir
-C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/CMakeFiles/ALL_BUILD.dir
-C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/CMakeFiles/ZERO_CHECK.dir
+C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/CMakeFiles/uniorb_test.dir
+C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/CMakeFiles/ALL_BUILD.dir
+C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/CMakeFiles/ZERO_CHECK.dir

@@ -65,7 +65,7 @@ bool exporter::export_metrics(const std::string & FullDirPath, const propagator_
              << std::setfill(' ') << std::setw(10) << Metrica.satellite_loading_count << "   "
              << std::setfill(' ') << std::setw(10) << Metrica.satellite_free_count  << "   "
              << std::setfill(' ') << std::setw(10) << Metrica.satellite_memory_empty_count << "   "
-             << std::setfill(' ') << std::setw(10) << Metrica.satellite_overloade_count << "   "
+             << std::setfill(' ') << std::setw(10) << Metrica.satellite_overloaded_count << "   "
              << std::setfill(' ') << std::setw(10) << std::fixed << Metrica.used_total << "   "
              << std::setfill(' ') << std::setw(10) << std::fixed << Metrica.passed_data << "   " << std::endl;
     }
@@ -93,6 +93,36 @@ bool exporter::export_events(const std::string & FullDirPath, const std::vector<
 
     Fout.close();
     std::cout << "exporter::export_events. Finish writing events to " << FullDirPath << " in " << (std::clock() - timer) / (double) CLOCKS_PER_SEC << " s." << std::endl;
+    return true;
+}
+
+bool exporter::export_satellite_stats(const std::string & FullDirPath, const propagator_data & Data) {
+    std::cout << "exporter::export_satellite_stats. Start writing satellite stats to " << FullDirPath << std::endl;
+    clock_t timer = std::clock();
+
+    auto FullPath = FullDirPath + "\\satellite_stats.txt";
+    auto Fout = std::ofstream(FullDirPath + "\\satellite_stats.txt");
+
+    if (!Fout.is_open() || !Fout.good()) {
+        std::cout << "exporter::export_satellite_stats. Unable to write file " << FullPath << std::endl;
+        return false;
+    }
+
+    Fout << "       Satname        Passed, GB         Input, GB/s        Output, GB/s    Storage, GB" << std::endl;
+    for (const auto & KV : Data.satellites) {
+        auto & Satellite = KV.second;
+        Fout.precision(2);
+        Fout << Satellite.name << "   "
+             << std::setfill(' ') << std::setw(15) << std::fixed << Satellite.get_transferred_data();
+        Fout.precision(5);
+        Fout << std::setfill(' ') << std::setw(20) << std::fixed << Satellite.parameters.input_rate
+             << std::setfill(' ') << std::setw(20) << std::fixed << Satellite.parameters.output_rate;
+        Fout.precision(0);
+             Fout << std::setfill(' ') << std::setw(15) << std::fixed << Satellite.parameters.storage << std::endl;
+    }
+
+    Fout.close();
+    std::cout << "exporter::export_satellite_stats. Finish writing satellite stats to " << FullDirPath << " in " << (std::clock() - timer) / (double) CLOCKS_PER_SEC << " s." << std::endl;
     return true;
 }
 

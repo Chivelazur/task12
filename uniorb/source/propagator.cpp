@@ -10,7 +10,7 @@ namespace uniorb {
 
 void propagator::propagate(const settings & Settings, const std::vector<event> & Events, const strategy & Strategy, propagator_data & Data) const {
     // Обрабатываем первое событие.
-    if (!Events.empty()) _process_event(Events[0], Data, Strategy);
+    if (!Events.empty()) _process_event(Settings, Events[0], Data, Strategy);
 
     // Последовательно обрабатываем все остальные события
     for (size_t i = 1; i < Events.size(); ++i) {
@@ -19,29 +19,29 @@ void propagator::propagate(const settings & Settings, const std::vector<event> &
         Data.metrics.push_back({Events[i], Metrica});
 
         // Обрабатываем событие.
-        _process_event(Events[i], Data, Strategy);
+        _process_event(Settings, Events[i], Data, Strategy);
     }
 }
 
-void propagator::_process_event(const event & Event, propagator_data & Data, const strategy & Strategy) const {
+void propagator::_process_event(const settings & Settings, const event & Event, propagator_data & Data, const strategy & Strategy) const {
     if (Event.type == station_entrance) {
-        _process_event_station_entrance(Event, Data, Strategy);
+        _process_event_station_entrance(Settings, Event, Data, Strategy);
     }
     else if (Event.type == station_exit) {
-        _process_event_station_exit(Event, Data, Strategy);
+        _process_event_station_exit(Settings, Event, Data, Strategy);
     }
     else if (Event.type == russia_entrance) {
-        _process_event_russia_entrance(Event, Data, Strategy);
+        _process_event_russia_entrance(Settings, Event, Data, Strategy);
     }
     else if (Event.type == russia_exit) {
-        _process_event_russia_exit(Event, Data, Strategy);
+        _process_event_russia_exit(Settings, Event, Data, Strategy);
     }
     else if (Event.type == download_finish) {
-        _process_event_download_finish(Event, Data, Strategy);
+        _process_event_download_finish(Settings, Event, Data, Strategy);
     }
 }
 
-void propagator::_process_event_station_entrance(const event & Event, propagator_data & Data, const strategy & Strategy) const {
+void propagator::_process_event_station_entrance(const settings & Settings, const event & Event, propagator_data & Data, const strategy & Strategy) const {
     // Синтаксический сахар
     auto & Station = Data.stations.at(Event.station_id);
     auto SatelliteID = Event.satellite_id;
@@ -53,7 +53,7 @@ void propagator::_process_event_station_entrance(const event & Event, propagator
     if (Data.satellites.at(SatelliteID).station_id != 0) return;
 
     // Получаем ID спутника, данные с которого должна скачивать станция (может быть 0, то есть не скачиваем).
-    auto NewSatelliteID = Strategy.get_observed_satellite(Station.id, Data);
+    auto NewSatelliteID = Strategy.get_observed_satellite(Settings, Station.id, Data);
 
     // Если меняется ID спутника, то необходимо обновить сессии.
     if (NewSatelliteID != Station.satellite_id) {
@@ -77,7 +77,7 @@ void propagator::_process_event_station_entrance(const event & Event, propagator
     }
 }
 
-void propagator::_process_event_station_exit(const event & Event, propagator_data & Data, const strategy & Strategy) const {
+void propagator::_process_event_station_exit(const settings & Settings, const event & Event, propagator_data & Data, const strategy & Strategy) const {
     // Синтаксический сахар
     auto & Station = Data.stations.at(Event.station_id);
     auto SatelliteID = Event.satellite_id;
@@ -86,7 +86,7 @@ void propagator::_process_event_station_exit(const event & Event, propagator_dat
     Station.visible_satellites.erase(SatelliteID);
 
     // Получаем ID спутника, данные с которого должна скачивать станция (может быть 0, то есть не скачиваем).
-    auto NewSatelliteID = Strategy.get_observed_satellite(Station.id, Data);
+    auto NewSatelliteID = Strategy.get_observed_satellite(Settings, Station.id, Data);
 
     // Если меняется ID спутника, то необходимо обновить сессии.
     if (NewSatelliteID != Station.satellite_id) {
@@ -110,23 +110,23 @@ void propagator::_process_event_station_exit(const event & Event, propagator_dat
     }
 }
 
-void propagator::_process_event_russia_entrance(const event & Event, propagator_data & Data, const strategy & Strategy) const {
+void propagator::_process_event_russia_entrance(const settings & Settings, const event & Event, propagator_data & Data, const strategy & Strategy) const {
     // Добавляем спутник в список спутников, которые находятся над Россией.
     Data.satellites.at(Event.satellite_id).is_russia = true;
 }
 
-void propagator::_process_event_russia_exit(const event & Event, propagator_data & Data, const strategy & Strategy) const {
+void propagator::_process_event_russia_exit(const settings & Settings, const event & Event, propagator_data & Data, const strategy & Strategy) const {
     // Убираем спутник из списка спутников, которые находятся над Россией.
     Data.satellites.at(Event.satellite_id).is_russia = false;
 }
 
-void propagator::_process_event_download_finish(const event & Event, propagator_data & Data, const strategy & Strategy) const {
+void propagator::_process_event_download_finish(const settings & Settings, const event & Event, propagator_data & Data, const strategy & Strategy) const {
     // Синтаксический сахар
     auto & Station = Data.stations.at(Event.station_id);
     auto SatelliteID = Event.satellite_id;
 
     // Получаем ID спутника, данные с которого должна скачивать станция (он всегда есть на этом шаге).
-    auto NewSatelliteID = Strategy.get_observed_satellite(Event.station_id, Data);
+    auto NewSatelliteID = Strategy.get_observed_satellite(Settings, Event.station_id, Data);
 
     // Если меняется ID спутника, то необходимо обновить сессии.
     if (NewSatelliteID != Station.satellite_id) {
@@ -202,7 +202,7 @@ metrica propagator::_update_storage(const event & CurrentEvent, const event & Pr
         // Считаем суммарный объем занятой бортовой памяти спутников, переданных данных и количество спутников с заполненной бортовой памятью
         Metrica.used_total += Satellite.get_used_storage();
         Metrica.passed_data += Satellite.get_transferred_data();
-        if (Satellite.is_overloaded()) Metrica.satellite_overloade_count++;
+        if (Satellite.is_overloaded()) Metrica.satellite_overloaded_count++;
     }
 
     return Metrica;

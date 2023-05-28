@@ -21,12 +21,13 @@ void launch(const settings & Settings, const std::vector<event> & Events, const 
     std::filesystem::create_directory(Path + "\\sessions");
     exporter::export_sessions(Path + "\\sessions", Data);
     exporter::export_metrics(Path, Data);
+    exporter::export_satellite_stats(Path, Data);
 
     // Подводим итог по ключевым метрикам алгоритма - GB переданных данных и количество секунд до первого заполнения памяти спутника.
     double FirstMJD = Data.metrics.begin()->first.epoch;
     double LastMJD =  Data.metrics.back().first.epoch;
     for (auto & KV : Data.metrics) {
-        if (KV.second.satellite_overloade_count != 0) {
+        if (KV.second.satellite_overloaded_count != 0) {
             LastMJD = KV.first.epoch;
             break;
         }
@@ -50,7 +51,7 @@ int main(int argc, char *argv[]) {
     if (argc < 3)
     {
         std::cout << "Path to data directories are required.";
-        return 0;
+        return 1;
     }
     
     // Исходные параметры спутников

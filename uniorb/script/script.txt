@@ -6,4 +6,4 @@ cmake ..
 msbuild UNIORB.sln /p:Configuration=Release
 
 3. Launch test
-C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\release\uniorb_test.exe C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\data\Russia2Constellation2 C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\data\Facility2Constellation C:\_ALBERT\_works_studies\_mysoft\_sitronics\uniorb\output
+C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\release\uniorb_test.exe C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\data\Russia2Constellation2 C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\data\Facility2Constellation C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\output

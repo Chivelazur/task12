@@ -4,7 +4,7 @@ namespace uniorb {
 
 strategy_3::strategy_3() : strategy("strategy_3") {}
 
-size_t strategy_3::get_observed_satellite(size_t StationID, propagator_data & Data) const {
+size_t strategy_3::get_observed_satellite(const settings & Settings, size_t StationID, propagator_data & Data) const {
     return 0;
 }
 

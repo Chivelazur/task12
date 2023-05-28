@@ -4,7 +4,7 @@ namespace uniorb {
 
 strategy_1::strategy_1() : strategy("strategy_1") {}
 
-size_t strategy_1::get_observed_satellite(size_t StationID, propagator_data & Data) const {
+size_t strategy_1::get_observed_satellite(const settings & Settings, size_t StationID, propagator_data & Data) const {
     // Рассматривает только спутники в зоне видимости, которые не ведут скачку на другие станции.
     double MaxStorage = 0;
     double UsedStorage = 0;

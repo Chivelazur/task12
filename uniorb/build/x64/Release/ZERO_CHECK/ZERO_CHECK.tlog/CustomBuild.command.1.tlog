@@ -1,6 +1,6 @@
-^C:\_ALBERT\_WORKS_STUDIES\_MYSOFT\_SITRONICS\UNIORB\BUILD\CMAKEFILES\1425407B214EFF413E5B0119D9F3A6B5\GENERATE.STAMP.RULE
+^C:\_ALBERT\_WORKS_STUDIES\_MYSOFT\TASK12\UNIORB\BUILD\CMAKEFILES\733D5E47E2F7F22204ED17E45CDA11B3\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb -BC:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/UNIORB.sln
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/_ALBERT/_works_studies/_mysoft/task12/uniorb -BC:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/UNIORB.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

@@ -11,7 +11,7 @@ public:
     double passed_data = 0;
 
     // Количество спутников, у которых полностью заполнена память.
-    int satellite_overloade_count = 0;
+    int satellite_overloaded_count = 0;
 
     // Количество спутников, у которых полностью скачали все данные.
     int satellite_memory_empty_count = 0;

@@ -1,6 +1,6 @@
-^C:\_ALBERT\_WORKS_STUDIES\_MYSOFT\_SITRONICS\UNIORB\CMAKELISTS.TXT
+^C:\_ALBERT\_WORKS_STUDIES\_MYSOFT\TASK12\UNIORB\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb -BC:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build --check-stamp-file C:/_ALBERT/_works_studies/_mysoft/_sitronics/uniorb/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/_ALBERT/_works_studies/_mysoft/task12/uniorb -BC:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build --check-stamp-file C:/_ALBERT/_works_studies/_mysoft/task12/uniorb/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
