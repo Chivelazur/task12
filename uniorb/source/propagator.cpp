@@ -165,8 +165,10 @@ metrica propagator::_update_storage(const event & CurrentEvent, const event & Pr
             // Если спутник находится над территорией Россией, значит он мог вести съемку.
             if (Satellite.is_russia) {
                 auto StorageIncrease = Satellite.parameters.input_rate * T;
-                // Добавляем занятый объем бортовой памяти
+                // Добавляем занятый объем бортовой памяти и считаем теор. максимум
                 Satellite.increase_storage(StorageIncrease);
+                // Считаем теор. максимум
+                Metrica.max_data += StorageIncrease;
             }
 
             // Считаем число спутников, которые не скачивают данные.

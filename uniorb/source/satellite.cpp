@@ -47,24 +47,24 @@ satellite & satellite::operator=(satellite && Satellite) {
     return *this;
 }
 
-bool satellite::increase_storage(double Value) {
+double satellite::increase_storage(double Value) {
     _used_storage += Value;
     if (_used_storage >= parameters.storage) {
         _used_storage = parameters.storage;
-        return true;
+        return parameters.storage - Value;
     }
-    return false;
+    return Value;
 }
 
-bool satellite::decrease_storage(double Value) {
+double satellite::decrease_storage(double Value) {
     _used_storage = _used_storage - Value;
     if (_used_storage < 0) {
         _used_storage = 0;
         _transferred_data += _used_storage;
-        return true;
+        return _used_storage;
     }
     _transferred_data += Value;
-    return false;
+    return Value;
 }
 
 double satellite::get_used_storage() const {

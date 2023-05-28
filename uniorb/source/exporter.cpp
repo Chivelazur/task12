@@ -55,11 +55,12 @@ bool exporter::export_metrics(const std::string & FullDirPath, const propagator_
         std::cout << "exporter::export_metrics. Unable to write file " << FullPath << std::endl;
         return false;
     }
-
-    Fout << "                    Date             Satname               Event    Free sats Loading sats     Finished   Overloaded     Used, GB   Passed, GB" << std::endl;
+    double MaxData = 0;
+    Fout << "                    Date             Satname               Event    Free sats     Finished   Overloaded     Used, GB   Passed, GB      Max, GB" << std::endl;
     for (const auto & KV : Data.metrics) {
         auto & Event = KV.first;
         auto & Metrica = KV.second;
+        MaxData += Metrica.max_data;
         Fout.precision(2);
         Fout << event_to_string(Event, Data) << "   "
              << std::setfill(' ') << std::setw(10) << Metrica.satellite_loading_count << "   "
@@ -67,7 +68,8 @@ bool exporter::export_metrics(const std::string & FullDirPath, const propagator_
              << std::setfill(' ') << std::setw(10) << Metrica.satellite_memory_empty_count << "   "
              << std::setfill(' ') << std::setw(10) << Metrica.satellite_overloaded_count << "   "
              << std::setfill(' ') << std::setw(10) << std::fixed << Metrica.used_total << "   "
-             << std::setfill(' ') << std::setw(10) << std::fixed << Metrica.passed_data << "   " << std::endl;
+             << std::setfill(' ') << std::setw(10) << std::fixed << Metrica.passed_data << "   " 
+             << std::setfill(' ') << std::setw(10) << std::fixed << MaxData << "   " << std::endl;
     }
 
     Fout.close();

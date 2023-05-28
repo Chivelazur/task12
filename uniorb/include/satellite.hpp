@@ -22,11 +22,11 @@ public:
     satellite & operator=(const satellite & Satellite);
     satellite & operator=(satellite && Satellite);
 
-    // Возвращает true, если бортовая память закончилась. Иначе false.
-    bool increase_storage(double Value);
+    // Возвращает реально добавленный объем, с учетом, что есть лимит по памяти.
+    double increase_storage(double Value);
 
-    // Возвращает true, если бортовая память полностью освободилась. Иначе false.
-    bool decrease_storage(double Value);
+    // Возвращает реально убавленный объем, с учетом, что не занятая память не может быть меньше 0.
+    double decrease_storage(double Value);
     double get_used_storage() const;
     bool is_overloaded() const;
     double get_transferred_data() const;
