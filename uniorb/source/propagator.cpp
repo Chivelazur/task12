@@ -160,15 +160,18 @@ metrica propagator::_update_storage(const event & CurrentEvent, const event & Pr
     for (auto & KV : Data.satellites) {
         auto & Satellite = KV.second;
 
+        auto StorageIncrease = Satellite.parameters.input_rate * T;
+        if (Satellite.is_russia) {
+            // Считаем теор. максимум
+            Metrica.max_data += StorageIncrease;
+        }
+
         // Для всех спутников, с которых не ведется скачка данных.
         if (Satellite.station_id == 0) {
             // Если спутник находится над территорией Россией, значит он мог вести съемку.
             if (Satellite.is_russia) {
-                auto StorageIncrease = Satellite.parameters.input_rate * T;
                 // Добавляем занятый объем бортовой памяти и считаем теор. максимум
                 Satellite.increase_storage(StorageIncrease);
-                // Считаем теор. максимум
-                Metrica.max_data += StorageIncrease;
             }
 
             // Считаем число спутников, которые не скачивают данные.

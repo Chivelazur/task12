@@ -56,7 +56,7 @@ bool exporter::export_metrics(const std::string & FullDirPath, const propagator_
         return false;
     }
     double MaxData = 0;
-    Fout << "                    Date             Satname               Event    Free sats     Finished   Overloaded     Used, GB   Passed, GB      Max, GB" << std::endl;
+    Fout << "                    Date             Satname               Event Loading sats    Free sats     Finished   Overloaded     Used, GB   Passed, GB      Max, GB" << std::endl;
     for (const auto & KV : Data.metrics) {
         auto & Event = KV.first;
         auto & Metrica = KV.second;
