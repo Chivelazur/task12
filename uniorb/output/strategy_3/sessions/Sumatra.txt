@@ -1,3 +1,0 @@
-Sumatra
--------------------------
-    Access          Start Time (UTCG)           Stop Time (UTCG) Duration (s)          Satname    Data (MB)

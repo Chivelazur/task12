@@ -18,8 +18,12 @@ void launch(const settings & Settings, const std::vector<event> & Events, const 
     // Выводим данные.
     auto Path = Settings.output_dir_path + "\\" + Strategy.get_name();
     std::filesystem::create_directory(Path);
-    std::filesystem::create_directory(Path + "\\sessions");
-    exporter::export_sessions(Path + "\\sessions", Data);
+    std::filesystem::create_directory(Path + "\\Ground");
+    std::filesystem::create_directory(Path + "\\Drop");
+    std::filesystem::create_directory(Path + "\\Camera");
+    exporter::export_sessions(Path + "\\Ground", Data);
+    exporter::export_drops(Path + "\\Drop", Data);
+    exporter::export_camera(Path + "\\Camera", Data);
     exporter::export_metrics(Path, Data);
     exporter::export_satellite_stats(Path, Data);
 
@@ -44,7 +48,7 @@ void launch(const settings & Settings, const std::vector<event> & Events, const 
 Вход:
     1 аргумент - полный путь к директории с файлами пролетов над Россией.
     2 аргумент - полный путь к директории с файлами видимостей спутников над станциями.
-    3 аргумент - полный путь к директории с выходными файлами.
+    3 аргумент - полный путь к директории с выходными файлами (Results).
 */
 int main(int argc, char *argv[]) {
     // Проверка
@@ -95,6 +99,10 @@ int main(int argc, char *argv[]) {
     auto Strategy3 = strategy_3();
     Data = propagator_data(Satellites, Stations);
     launch(Settings, Events, Strategy3, Data);
+
+    auto Strategy4 = strategy_4();
+    Data = propagator_data(Satellites, Stations);
+    launch(Settings, Events, Strategy4, Data);
 
     return 0;
 }

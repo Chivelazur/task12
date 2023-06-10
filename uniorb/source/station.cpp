@@ -39,4 +39,22 @@ station & station::operator=(station && Station) {
     return *this;
 }
 
+bool station::is_loading() const {
+    return (satellite_id != 0);
+}
+
+void station::finish_session(double EndMjd) {
+    if (satellite_id != 0) {
+        sessions.back().end_date = EndMjd;
+        satellite_id = 0;
+    }
+}
+
+void station::start_session(double StartMjd, size_t SatelliteID) {
+    if (satellite_id == 0) {
+        sessions.push_back(session(SatelliteID, _id, StartMjd));
+        satellite_id = SatelliteID;
+    }
+}
+
 }

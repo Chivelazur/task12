@@ -36,9 +36,9 @@ void propagator::_process_event(const settings & Settings, const event & Event, 
     else if (Event.type == russia_exit) {
         _process_event_russia_exit(Settings, Event, Data, Strategy);
     }
-    else if (Event.type == download_finish) {
-        _process_event_download_finish(Settings, Event, Data, Strategy);
-    }
+    // else if (Event.type == download_finish) {
+    //     _process_event_download_finish(Settings, Event, Data, Strategy);
+    // }
 }
 
 void propagator::_process_event_station_entrance(const settings & Settings, const event & Event, propagator_data & Data, const strategy & Strategy) const {
@@ -50,7 +50,7 @@ void propagator::_process_event_station_entrance(const settings & Settings, cons
     Station.visible_satellites.insert(SatelliteID);
 
     // Если спутник в данный момент скачивает данные на другую станцию, то обработка не требуется:
-    if (Data.satellites.at(SatelliteID).station_id != 0) return;
+    if (Data.satellites.at(SatelliteID).is_loading()) return;
 
     // Получаем ID спутника, данные с которого должна скачивать станция (может быть 0, то есть не скачиваем).
     auto NewSatelliteID = Strategy.get_observed_satellite(Settings, Station.id, Data);
@@ -58,21 +58,24 @@ void propagator::_process_event_station_entrance(const settings & Settings, cons
     // Если меняется ID спутника, то необходимо обновить сессии.
     if (NewSatelliteID != Station.satellite_id) {
         // Если станция наблюдала некий спутник, то необходимо завершить сессию с ним.
-        if (Station.satellite_id != 0) {
-            Station.sessions.back().end_date = Event.epoch;
-            // Этот некий спутник больше не скачивает данные.
-            Data.satellites.at(Station.satellite_id).station_id = 0;
+        if (Station.is_loading()) {
+            // Этот некий спутник больше не скачивает данные и можем начать съемку
+            auto & OldSatellite = Data.satellites.at(Station.satellite_id);
+            OldSatellite.finish_session(Event.epoch);
+            if (OldSatellite.is_camera()) OldSatellite.start_camera(Event.epoch);
+            // Завершаем сессию
+            Station.finish_session(Event.epoch);
         }
-
-        // Обновляем ID спутника, с которого скачивает данные станция (может быть 0 - данные не скачиваем)
-        Station.satellite_id = NewSatelliteID;
 
         // Если скачиваем данные с нового спутника (ID != 0), создаем новую сессию
         if (NewSatelliteID != 0) {
-            // Создаем сессию для нового спутника.
-            Station.sessions.push_back(session(NewSatelliteID, Event.epoch));
-            // Указываем, что спутник теперь передает данные на эту станцию.
-            Data.satellites.at(NewSatelliteID).station_id = Station.id;
+            // Создаем сессию у станции для нового спутника.
+            Station.start_session(Event.epoch, NewSatelliteID);
+            // Создаем сессию для спутника (важно - get_observed_satellite не возвращает спутники, которые уже скачивают)
+            // И останавливаем запись, если она была.
+            auto & NewSatellite = Data.satellites.at(NewSatelliteID);
+            if (NewSatellite.is_camera()) NewSatellite.finish_camera(Event.epoch);
+            NewSatellite.start_session(Event.epoch, Station.id);
         }
     }
 }
@@ -91,35 +94,45 @@ void propagator::_process_event_station_exit(const settings & Settings, const ev
     // Если меняется ID спутника, то необходимо обновить сессии.
     if (NewSatelliteID != Station.satellite_id) {
         // Если станция наблюдала некий спутник, то необходимо завершить сессию с ним.
-        if (Station.satellite_id != 0) {
-            Station.sessions.back().end_date = Event.epoch;
+        if (Station.is_loading()) {
             // Этот некий спутник больше не скачивает данные.
-            Data.satellites.at(Station.satellite_id).station_id = 0;
+            auto & OldSatellite = Data.satellites.at(Station.satellite_id);
+            OldSatellite.finish_session(Event.epoch);
+            if (OldSatellite.is_camera()) OldSatellite.start_camera(Event.epoch);
+            // Завершаем сессию
+            Station.finish_session(Event.epoch);
         }
-
-        // Обновляем ID спутника, с которого скачивает данные станция (может быть 0 - данные не скачиваем)
-        Station.satellite_id = NewSatelliteID;
 
         // Если скачиваем данные с нового спутника (ID != 0), создаем новую сессию
         if (NewSatelliteID != 0) {
-            // Создаем сессию для нового спутника.
-            Station.sessions.push_back(session(NewSatelliteID, Event.epoch));
-            // Указываем, что спутник теперь передает данные на эту станцию.
-            Data.satellites.at(NewSatelliteID).station_id = Station.id;
+            // Создаем сессию у станции для нового спутника.
+            Station.start_session(Event.epoch, NewSatelliteID);
+            // Создаем сессию для спутника (важно - get_observed_satellite не возвращает спутники, которые уже скачивают)
+            // И останавливаем запись, если она была.
+            auto & NewSatellite = Data.satellites.at(NewSatelliteID);
+            if (NewSatellite.is_camera()) NewSatellite.finish_camera(Event.epoch);
+            NewSatellite.start_session(Event.epoch, Station.id);
         }
     }
 }
 
 void propagator::_process_event_russia_entrance(const settings & Settings, const event & Event, propagator_data & Data, const strategy & Strategy) const {
-    // Добавляем спутник в список спутников, которые находятся над Россией.
-    Data.satellites.at(Event.satellite_id).is_russia = true;
+    auto & Satellite = Data.satellites.at(Event.satellite_id);
+    // Помечаем, что летим над РФ
+    Satellite.is_russia = true;
+    // Если можем снимать - начинаем
+    if (Satellite.is_camera()) Satellite.start_camera(Event.epoch);
 }
 
 void propagator::_process_event_russia_exit(const settings & Settings, const event & Event, propagator_data & Data, const strategy & Strategy) const {
-    // Убираем спутник из списка спутников, которые находятся над Россией.
-    Data.satellites.at(Event.satellite_id).is_russia = false;
+    auto & Satellite = Data.satellites.at(Event.satellite_id);
+    // Если вели съемку - завершаем
+    if (Satellite.is_camera()) Satellite.finish_camera(Event.epoch);
+    // Помечаем, что не летим над РФ
+    Satellite.is_russia = false;
 }
 
+/*
 void propagator::_process_event_download_finish(const settings & Settings, const event & Event, propagator_data & Data, const strategy & Strategy) const {
     // Синтаксический сахар
     auto & Station = Data.stations.at(Event.station_id);
@@ -135,6 +148,7 @@ void propagator::_process_event_download_finish(const settings & Settings, const
             Station.sessions.back().end_date = Event.epoch;
             // Старый спутник больше не скачивает данные.
             Data.satellites.at(Station.satellite_id).station_id = 0;
+            Data.satellites.at(Station.satellite_id).sessions.back().end_date = Event.epoch;
         }
 
         // Обновляем ID спутника, с которого скачивает данные станция (может быть 0 - данные не скачиваем)
@@ -143,12 +157,15 @@ void propagator::_process_event_download_finish(const settings & Settings, const
         // Если скачиваем данные с нового спутника (ID != 0), создаем новую сессию
         if (NewSatelliteID != 0) {
             // Создаем сессию для нового спутника.
-            Station.sessions.push_back(session(NewSatelliteID, Event.epoch));
-            // Указываем, что спутник теперь передает данные на эту станцию.
-            Data.satellites.at(NewSatelliteID).station_id = Station.id;
+            Station.sessions.push_back(session(NewSatelliteID, Station.id, Event.epoch));
+            // Указываем, что спутник теперь передает данные на эту станцию и создаем сессию у него.
+            auto & Satellite = Data.satellites.at(NewSatelliteID);
+            Satellite.station_id = Station.id;
+            Satellite.sessions.push_back(session(NewSatelliteID, Station.id, Event.epoch));
         }
     }
 }
+*/
 
 metrica propagator::_update_storage(const event & CurrentEvent, const event & PreviousEvent, propagator_data & Data) const {
     // Готовим выходные метрики
@@ -169,9 +186,11 @@ metrica propagator::_update_storage(const event & CurrentEvent, const event & Pr
         // Для всех спутников, с которых не ведется скачка данных.
         if (Satellite.station_id == 0) {
             // Если спутник находится над территорией Россией, значит он мог вести съемку.
-            if (Satellite.is_russia) {
-                // Добавляем занятый объем бортовой памяти и считаем теор. максимум
+            if (Satellite.is_camera()) {
+                // Добавляем занятый объем бортовой памяти
                 Satellite.increase_storage(StorageIncrease);
+                // Если память закончилась - завершаем съемку.
+                if (Satellite.is_overloaded()) Satellite.finish_camera(CurrentEvent.epoch);
             }
 
             // Считаем число спутников, которые не скачивают данные.
@@ -189,13 +208,15 @@ metrica propagator::_update_storage(const event & CurrentEvent, const event & Pr
             // Добавляем скачанный объем в метрику.
             // Если скачали не все данные.
             if (UsedStorage > StorageDecrease) {
-                // Обновляем сеанс.
+                // Обновляем сеансы.
                 Data.stations.at(Satellite.station_id).sessions.back().passed_data += StorageDecrease;
+                Data.satellites.at(Satellite.id).sessions.back().passed_data += StorageDecrease;
             }
             // Если скачали все данные.
             else {
-                // Обновляем сеанс.
+                // Обновляем сеансы.
                 Data.stations.at(Satellite.station_id).sessions.back().passed_data += UsedStorage;
+                Data.satellites.at(Satellite.id).sessions.back().passed_data += UsedStorage;
                 // Считаем количество спутников, с которых полностью скачали данные.
                 Metrica.satellite_memory_empty_count++;
             }

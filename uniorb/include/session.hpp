@@ -9,6 +9,9 @@ public:
     // ID спутника
     size_t satellite_id;
 
+    // ID станции
+    size_t station_id;
+
     // MJD начала сессии.
     double start_date;
 
@@ -18,7 +21,7 @@ public:
     // Объем переданных данных, GB
     double passed_data = 0;
 
-    session(size_t SatelliteID, double StartDate);
+    session(size_t SatelliteID, size_t StationID, double StartDate);
 };
 
 }

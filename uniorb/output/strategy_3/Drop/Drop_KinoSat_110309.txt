@@ -1,0 +1,3 @@
+KinoSat_110309
+-------------------------
+    Access    *     Start Time (UTCG)     *     Stop Time (UTCG)  *   Duration (s)        *       Station  *  Data (Mbytes)

@@ -52,6 +52,9 @@
     <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\strategy_3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\source\strategy_4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\test\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -106,6 +109,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\strategy_3.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\strategy_4.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\_ALBERT\_works_studies\_mysoft\task12\uniorb\include\uniorb.hpp">

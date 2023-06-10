@@ -29,7 +29,7 @@ protected:
     void _process_event_station_exit(const settings & Settings, const event & Event, propagator_data & Data, const strategy & Strategy) const;
     void _process_event_russia_entrance(const settings & Settings, const event & Event, propagator_data & Data, const strategy & Strategy) const;
     void _process_event_russia_exit(const settings & Settings, const event & Event, propagator_data & Data, const strategy & Strategy) const;
-    void _process_event_download_finish(const settings & Settings, const event & Event, propagator_data & Data, const strategy & Strategy) const;
+    // void _process_event_download_finish(const settings & Settings, const event & Event, propagator_data & Data, const strategy & Strategy) const;
 
     /* Шаг 1 общего алгоритма обработки событий*/
     metrica _update_storage(const event & CurrentEvent, const event & PreviousEvent, propagator_data & Data) const;

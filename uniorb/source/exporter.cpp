@@ -16,7 +16,7 @@ bool exporter::export_sessions(const std::string & FullDirPath, const propagator
     // Записываем сессии по каждой станции
     for (const auto & KV : Data.stations) {
         auto & Station = KV.second;
-        auto FullPath = FullDirPath + "\\" + Station.name + ".txt";
+        auto FullPath = FullDirPath + "\\Ground_" + Station.name + ".txt";
         auto Fout = std::ofstream(FullPath);
 
         if (!Fout.is_open() || !Fout.good()) {
@@ -25,22 +25,91 @@ bool exporter::export_sessions(const std::string & FullDirPath, const propagator
         }
         Fout << Station.name << std::endl;
         Fout << "-------------------------" << std::endl;
-        Fout << "    Access          Start Time (UTCG)           Stop Time (UTCG) Duration (s)          Satname    Data (MB)" << std::endl;
+        Fout << "    Access    *     Start Time (UTCG)     *     Stop Time (UTCG)  *   Duration (s)        *      Sat name *   Data (Mbytes)" << std::endl;
         int i = 1;
-        Fout.precision(2);
+        Fout.precision(3);
         for (const auto & Session : Station.sessions) {
             Fout << std::setfill(' ') << std::setw(10) << i++ << "   " 
                  << date(Session.start_date).get_date_2(3) << "   "
                  << date(Session.end_date).get_date_2(3) << "   "
-                 << std::setfill(' ') << std::setw(10) << std::fixed << (Session.end_date - Session.start_date) * 86400. << "   "
-                 << Data.satellites.at(Session.satellite_id).name << "   "
-                 << std::setfill(' ') << std::setw(10) << std::fixed << Session.passed_data * 1000 << std::endl;
+                 << std::setfill(' ') << std::setw(15) << std::fixed << (Session.end_date - Session.start_date) * 86400. << "   "
+                 << std::setfill(' ') << std::setw(20) << Data.satellites.at(Session.satellite_id).name << "   "
+                 << std::setfill(' ') << std::setw(15) << std::fixed << Session.passed_data * 1000 << std::endl;
         }
 
         Fout.close();
     }
     
     std::cout << "exporter::export_sessions. Finish writing sessions files to " << FullDirPath << " in " << (std::clock() - timer) / (double) CLOCKS_PER_SEC << " s." << std::endl;
+    return true;
+}
+
+bool exporter::export_drops(const std::string & FullDirPath, const propagator_data & Data) {
+    std::cout << "exporter::export_drops. Start writing drop files to " << FullDirPath << std::endl;
+    clock_t timer = std::clock();
+
+    // Записываем сессии по каждой станции
+    for (const auto & KV : Data.satellites) {
+        auto & Satellite = KV.second;
+        auto FullPath = FullDirPath + "\\Drop_" + Satellite.name + ".txt";
+        auto Fout = std::ofstream(FullPath);
+
+        if (!Fout.is_open() || !Fout.good()) {
+            std::cout << "exporter::export_drops. Unable to write file " << FullPath << std::endl;
+            return false;
+        }
+        Fout << Satellite.name << std::endl;
+        Fout << "-------------------------" << std::endl;
+        Fout << "    Access    *     Start Time (UTCG)     *     Stop Time (UTCG)  *   Duration (s)        *       Station  *  Data (Mbytes)" << std::endl;
+        int i = 1;
+        Fout.precision(3);
+        for (const auto & Session : Satellite.sessions) {
+            Fout << std::setfill(' ') << std::setw(10) << i++ << "   " 
+                 << date(Session.start_date).get_date_2(3) << "   "
+                 << date(Session.end_date).get_date_2(3) << "   "
+                 << std::setfill(' ') << std::setw(15) << std::fixed << (Session.end_date - Session.start_date) * 86400. << "   "
+                 << std::setfill(' ') << std::setw(20) << Data.stations.at(Session.station_id).name << "   "
+                 << std::setfill(' ') << std::setw(15) << std::fixed << Session.passed_data * 1000 << std::endl;
+        }
+
+        Fout.close();
+    }
+    
+    std::cout << "exporter::export_drops. Finish writing drop files to " << FullDirPath << " in " << (std::clock() - timer) / (double) CLOCKS_PER_SEC << " s." << std::endl;
+    return true;
+}
+
+bool exporter::export_camera(const std::string & FullDirPath, const propagator_data & Data) {
+    std::cout << "exporter::export_camera. Start writing camera files to " << FullDirPath << std::endl;
+    clock_t timer = std::clock();
+
+    // Записываем сессии по каждой станции
+    for (const auto & KV : Data.satellites) {
+        auto & Satellite = KV.second;
+        auto FullPath = FullDirPath + "\\Camera_" + Satellite.name + ".txt";
+        auto Fout = std::ofstream(FullPath);
+
+        if (!Fout.is_open() || !Fout.good()) {
+            std::cout << "exporter::export_drops. Unable to write file " << FullPath << std::endl;
+            return false;
+        }
+        Fout << Satellite.name << std::endl;
+        Fout << "-------------------------" << std::endl;
+        Fout << "    Access    *     Start Time (UTCG)     *     Stop Time (UTCG)  *   Duration (s) *   Data (Mbytes)" << std::endl;
+        int i = 1;
+        Fout.precision(3);
+        for (const auto & Session : Satellite.camera) {
+            Fout << std::setfill(' ') << std::setw(10) << i++ << "   " 
+                 << date(Session.start_date).get_date_2(3) << "   "
+                 << date(Session.end_date).get_date_2(3) << "   "
+                 << std::setfill(' ') << std::setw(15) << std::fixed << (Session.end_date - Session.start_date) * 86400. << "   "
+                 << std::setfill(' ') << std::setw(15) << std::fixed << Session.passed_data * 1000 << std::endl;
+        }
+
+        Fout.close();
+    }
+    
+    std::cout << "exporter::export_camera. Finish writing camera files to " << FullDirPath << " in " << (std::clock() - timer) / (double) CLOCKS_PER_SEC << " s." << std::endl;
     return true;
 }
 
@@ -110,12 +179,13 @@ bool exporter::export_satellite_stats(const std::string & FullDirPath, const pro
         return false;
     }
 
-    Fout << "       Satname        Passed, GB         Input, GB/s        Output, GB/s    Storage, GB" << std::endl;
+    Fout << "       Satname        Passed, GB     Camera, GB         Input, GB/s        Output, GB/s    Storage, GB" << std::endl;
     for (const auto & KV : Data.satellites) {
         auto & Satellite = KV.second;
         Fout.precision(2);
         Fout << Satellite.name << "   "
-             << std::setfill(' ') << std::setw(15) << std::fixed << Satellite.get_transferred_data();
+             << std::setfill(' ') << std::setw(15) << std::fixed << Satellite.get_transferred_data()
+             << std::setfill(' ') << std::setw(15) << std::fixed << Satellite.get_camera_data();
         Fout.precision(5);
         Fout << std::setfill(' ') << std::setw(20) << std::fixed << Satellite.parameters.input_rate
              << std::setfill(' ') << std::setw(20) << std::fixed << Satellite.parameters.output_rate;

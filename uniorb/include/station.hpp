@@ -26,6 +26,15 @@ public:
     station(station && Station);
     station & operator=(const station & Station);
     station & operator=(station && Station);
+
+    // Скачивает ли станция данные со спутника
+    bool is_loading() const;
+
+    // Завершает текущий сеанс: ставит в 0 satellite_id, устанавливает конец сессии.
+    void finish_session(double EndMjd);
+
+    // Стартует новый сеанс, если нет текущего.
+    void start_session(double StartMjd, size_t SatelliteID);
     
 private:
     // Автоматически присваемый ID при создании объекта. Начинается с 1.

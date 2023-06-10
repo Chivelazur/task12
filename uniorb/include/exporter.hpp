@@ -26,6 +26,28 @@ public:
     Выход:
         true - если выгрузка успешна.
         false - если ошибочна.
+    Результат работы функции - файлы интервалы передачи со спутников, созданные в директории Settings.output_dir_path
+    */
+    static bool export_drops(const std::string & FullDirPath, const propagator_data & Data);
+
+    /*
+    Вход:
+        FullDitPath - полный путь к директории, куда запишутся файлы.
+        Data - данные пропагатора.
+    Выход:
+        true - если выгрузка успешна.
+        false - если ошибочна.
+    Результат работы функции - файлы интервалов записи данных на спутники, созданные в директории Settings.output_dir_path
+    */
+    static bool export_camera(const std::string & FullDirPath, const propagator_data & Data);
+
+    /*
+    Вход:
+        FullDitPath - полный путь к директории, куда запишутся файлы.
+        Data - данные пропагатора.
+    Выход:
+        true - если выгрузка успешна.
+        false - если ошибочна.
     Результат работы функции - файл с контрольными метриками, созданные в директории Settings.output_dir_path
     */
     static bool export_metrics(const std::string & FullDirPath, const propagator_data & Data);
