@@ -18,6 +18,9 @@ public:
     // Признак, что спутник летит над Россией.
     bool is_russia = false;
 
+    // Максимальный теоретический объем данных
+    double theormax_data = 0;
+
     // Сеансы передачи данных на станции.
     std::vector<session> sessions = std::vector<session>();
 
@@ -39,6 +42,9 @@ public:
     
     // Закончилась ли бортовая память
     bool is_overloaded() const;
+
+    // Количество перезаполнений памяти
+    size_t get_overload_count() const;
 
     // Объем переданных данных
     double get_transferred_data() const;
@@ -78,6 +84,9 @@ private:
 
     // Объем отснятых данных в GB.
     double _camera_data;
+
+    // Количество полных заполнений памяти
+    size_t _overload_count;
 };
 
 }

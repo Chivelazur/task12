@@ -95,7 +95,7 @@ int main(int argc, char *argv[]) {
     auto Strategy2 = strategy_2();
     Data = propagator_data(Satellites, Stations);
     launch(Settings, Events, Strategy2, Data);
-
+    
     auto Strategy3 = strategy_3();
     Data = propagator_data(Satellites, Stations);
     launch(Settings, Events, Strategy3, Data);

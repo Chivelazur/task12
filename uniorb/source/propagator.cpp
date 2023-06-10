@@ -181,6 +181,7 @@ metrica propagator::_update_storage(const event & CurrentEvent, const event & Pr
         if (Satellite.is_russia) {
             // Считаем теор. максимум
             Metrica.max_data += StorageIncrease;
+            Satellite.theormax_data += StorageIncrease;
         }
 
         // Для всех спутников, с которых не ведется скачка данных.

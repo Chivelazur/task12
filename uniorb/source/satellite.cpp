@@ -6,37 +6,52 @@ namespace uniorb {
 size_t satellite::_id = 1;
 
 satellite::satellite(const std::string & Name, const satellite_parameters & Parameters) : 
-    id(_id++), name(Name), parameters(Parameters), is_russia(false), station_id(0), _used_storage(0), _transferred_data(0), _camera_data(0) {}
+    id(_id++), 
+    name(Name),
+    parameters(Parameters),
+    is_russia(false),
+    theormax_data(0),
+    station_id(0),
+    _used_storage(0),
+    _transferred_data(0),
+    _camera_data(0),
+    _overload_count(0) {}
 
 satellite::satellite(const satellite & Satellite) : 
     id(Satellite.id), 
     name(Satellite.name), 
     parameters(Satellite.parameters), 
     is_russia(Satellite.is_russia),
+    theormax_data(0),
     station_id(Satellite.station_id),
     _used_storage(Satellite._used_storage),
     _camera_data(Satellite._camera_data),
-    _transferred_data(Satellite._transferred_data) {}
+    _transferred_data(Satellite._transferred_data),
+    _overload_count(Satellite._overload_count) {}
 
 satellite::satellite(satellite && Satellite) : 
     id(Satellite.id), 
     name(std::move(Satellite.name)), 
     parameters(std::move(Satellite.parameters)),
     is_russia(Satellite.is_russia),
+    theormax_data(0),
     station_id(Satellite.station_id),
     _used_storage(Satellite._used_storage),
     _camera_data(Satellite._camera_data),
-    _transferred_data(Satellite._transferred_data) {}
+    _transferred_data(Satellite._transferred_data),
+    _overload_count(Satellite._overload_count) {}
 
 satellite & satellite::operator=(const satellite & Satellite) {
     id = Satellite.id;
     name = Satellite.name;
     parameters = Satellite.parameters;
     is_russia = Satellite.is_russia;
+    theormax_data = Satellite.theormax_data;
     station_id = Satellite.station_id;
     _used_storage = Satellite._used_storage;
     _camera_data = Satellite._camera_data;
     _transferred_data = Satellite._transferred_data;
+    _overload_count = Satellite._overload_count;
     return *this;
 }
 
@@ -45,15 +60,18 @@ satellite & satellite::operator=(satellite && Satellite) {
     name = std::move(Satellite.name);
     parameters = std::move(Satellite.parameters);
     is_russia = Satellite.is_russia;
+    theormax_data = Satellite.theormax_data;
     station_id = Satellite.station_id;
     _used_storage = Satellite._used_storage;
     _camera_data = Satellite._camera_data;
     _transferred_data = Satellite._transferred_data;
+    _overload_count = Satellite._overload_count;
     return *this;
 }
 
 double satellite::increase_storage(double Value) {
     double Added = std::min(Value, parameters.storage - _used_storage);
+    if (Added != Value && _used_storage != parameters.storage) _overload_count++;
     _used_storage += Added;
     _camera_data += Added;
     camera.back().passed_data += Added;
@@ -75,8 +93,12 @@ double satellite::get_used_storage() const {
     return _used_storage;
 }
 
+size_t satellite::get_overload_count() const {
+    return _overload_count;
+}
+
 bool satellite::is_overloaded() const {
-    if ( std::abs(_used_storage - parameters.storage) < 1E-10) return true;
+    if ( std::abs(_used_storage - parameters.storage) < 1E-10 ) return true;
     return false;
 }
  

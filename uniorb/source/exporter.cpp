@@ -179,13 +179,15 @@ bool exporter::export_satellite_stats(const std::string & FullDirPath, const pro
         return false;
     }
 
-    Fout << "       Satname        Passed, GB     Camera, GB         Input, GB/s        Output, GB/s    Storage, GB" << std::endl;
+    Fout << "       Satname        Passed, GB     Camera, GB        Max, GB      Overloads         Input, GB/s        Output, GB/s    Storage, GB" << std::endl;
     for (const auto & KV : Data.satellites) {
         auto & Satellite = KV.second;
         Fout.precision(2);
         Fout << Satellite.name << "   "
              << std::setfill(' ') << std::setw(15) << std::fixed << Satellite.get_transferred_data()
-             << std::setfill(' ') << std::setw(15) << std::fixed << Satellite.get_camera_data();
+             << std::setfill(' ') << std::setw(15) << std::fixed << Satellite.get_camera_data()
+             << std::setfill(' ') << std::setw(15) << std::fixed << Satellite.theormax_data
+             << std::setfill(' ') << std::setw(15) << std::fixed << Satellite.get_overload_count();
         Fout.precision(5);
         Fout << std::setfill(' ') << std::setw(20) << std::fixed << Satellite.parameters.input_rate
              << std::setfill(' ') << std::setw(20) << std::fixed << Satellite.parameters.output_rate;
